@@ -73,10 +73,9 @@ def split_actions(text: str, n_word:int, actions:tuple)->list:
         print(f'{subtext} ---№{i+1} исходное')
         print(f'{subtext_new} ---№{i+1} модифицированное {actions[j]}')    
     
-    print(f'{len(text)} - длина текста') 
-    print(f'{len(reduce(lambda x1, x2: x1 + x2, words_list))} - сумма длин слов')
 
-    return words_list_mod
+
+    return words_list, words_list_mod
 
 
 n = 1000
@@ -85,7 +84,8 @@ actions = ('upper', 'reverse', 'double', 'del_digits', 'del_even', 'replace')
 
 text = ''.join([random.choice(string.ascii_letters + string.digits) for i in range(n)])
 
-rez = split_actions(text, n_word, actions)
+words_list, words_list_mod = split_actions(text, n_word, actions)
 
-
+print(f'{len(text)} - длина текста') 
+print(f'{len(reduce(lambda x1, x2: x1 + x2, words_list))} - сумма длин слов')
 
