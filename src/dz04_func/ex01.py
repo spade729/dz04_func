@@ -25,9 +25,9 @@ actions – кортеж действий.
 т.д., а также lambda-функций.
 """
 
-from functools import reduce
 import random
 import string
+from functools import reduce
 
 #from functools import reduce
 
